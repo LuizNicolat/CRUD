@@ -12,7 +12,7 @@ class Usuario{
 
 	static function Login($dados){
 		$usuario 	= $dados['user'];
-		$senha	= $dados['senha'];//encripta com MD5
+		$senha	= md5($dados['senha']);//encripta com MD5
 		//verificando se ja existe
         $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         $query = "SELECT * FROM usuarios WHERE login = '$usuario' AND senha = '$senha'";
@@ -22,10 +22,9 @@ class Usuario{
 			$cliente = mysqli_fetch_object($existe);
 			//setar sessions para controle
 			$_SESSION['logado'] = 1;
-			header('location:logado/'); //redireciona
+			header('location:logado/index.php'); //redireciona
 			exit();//encerra a leitura do codigo
 		} else {
-            echo $query;
 			echo 'A combinação de usuario e senha não existe';
 		}
 	}
@@ -41,20 +40,14 @@ class Usuario{
 		$existe = mysqli_query($conexao, $queryexiste);
 
 		if(mysqli_num_rows($existe) > 0){ // retornou mais que 0 então existe
-            echo $usuario;
-		    echo $senha;
 			echo "Usuário já existe!";
 		} else { //se não grava no banco
 			//gravação no banco, $ok retorna TRUE ou FALSE
 			$query = "INSERT INTO usuarios (login, senha) values ('$usuario','$senha')";            
 			$ok = mysqli_query($conexao,$query);
             if($ok){
-                            echo $usuario;
-		    echo $senha;
 				echo "Cadastrado com sucesso!";
 			} else {
-                            echo $usuario;
-		    echo $senha;
 				echo "Erro ao Cadastrar!";
 			}
 		}

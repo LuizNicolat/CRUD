@@ -26,6 +26,14 @@
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.css">
 </head>
     <body>
+        <?php
+            if (isset($_POST['submit'])) {
+
+                $login = new Usuario();
+                echo $login->Login($_POST);
+                
+                }
+        ?>
         <div class="container">           
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
@@ -37,13 +45,8 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Senha" name="senha">                    
                 </div>
-                    <button type="submit" class="btn btn-primary form-control" name="logar"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Login</button>
-                                        
-                     <?php
-                        if($_POST){                            
-                            echo Usuario::Login($_POST);                            
-                        }
-                    ?>
+                    
+                <input type="submit" name="submit" value="Login" class="btn btn-success form-control">                 
                 </form>                
                 </div>            
             </div>  
