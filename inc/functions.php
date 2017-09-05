@@ -32,21 +32,22 @@ class Usuario{
 
 
 	function cadastraUsuario($dados){
-		$nome 	= $dados['nome']; //$_POST['nome']
-		$email 	= $dados['email'];
+		$usuario 	= $dados['user'];
 		$senha	= md5($dados['senha']);//encripta com MD5
 		//verificando se ja existe
-		$existe = mysqli_query("SELECT id FROM usuarios WHERE email = '$email'");
+		$existe = mysqli_query("SELECT id FROM usuarios WHERE login = '$usuario'");
 
 		if(mysqli_num_rows($existe) > 0){ // retornou mais que 0 então existe
-			return 2;
+			echo "Usuário já existe!";
 		} else { //se não grava no banco
 			//gravação no banco, $ok retorna TRUE ou FALSE
-			$ok = mysqli_query("INSERT INTO usuarios (nome, email, senha) values ('$nome','$email','$senha')");
-			if($ok){
-				return 1;
+			$query = "INSERT INTO usuarios (login, senha) values ('$usuario','$senha')";
+            $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			$ok = mysqli_query($conexao,$query);
+            if($ok){
+				echo "Cadstrado com sucesso!";
 			} else {
-				return 0;
+				echo "Erro ao Cadastrar!";
 			}
 		}
 	}
