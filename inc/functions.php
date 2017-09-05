@@ -31,22 +31,30 @@ class Usuario{
 	}
 
 
-	function cadastraUsuario($dados){
-		$usuario 	= $dados['user'];
-		$senha	= md5($dados['senha']);//encripta com MD5
+	function cadastraUsuario($user, $senha){
+        $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        
+		$usuario 	= $user;
+		$senha	= md5($senha);//encripta com MD5
 		//verificando se ja existe
-		$existe = mysqli_query("SELECT id FROM usuarios WHERE login = '$usuario'");
+        $queryexiste = "SELECT id FROM usuarios WHERE login = '$usuario'";
+		$existe = mysqli_query($conexao, $queryexiste);
 
 		if(mysqli_num_rows($existe) > 0){ // retornou mais que 0 então existe
+            echo $usuario;
+		    echo $senha;
 			echo "Usuário já existe!";
 		} else { //se não grava no banco
 			//gravação no banco, $ok retorna TRUE ou FALSE
-			$query = "INSERT INTO usuarios (login, senha) values ('$usuario','$senha')";
-            $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			$query = "INSERT INTO usuarios (login, senha) values ('$usuario','$senha')";            
 			$ok = mysqli_query($conexao,$query);
             if($ok){
-				echo "Cadstrado com sucesso!";
+                            echo $usuario;
+		    echo $senha;
+				echo "Cadastrado com sucesso!";
 			} else {
+                            echo $usuario;
+		    echo $senha;
 				echo "Erro ao Cadastrar!";
 			}
 		}
@@ -76,5 +84,12 @@ class Usuario{
 	}
 
 } //final da classe
+class teste{
+    
+    function testasefunciona(){
+        $Chups = "Teste de Echo";
+        echo $Chups;
+    }
+}
 
 ?>
