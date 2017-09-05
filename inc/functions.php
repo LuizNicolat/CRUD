@@ -10,11 +10,13 @@ class Usuario{
 //		return $nome_mostra[0]; //primeiro nome
 //	}
 
-	function Login($dados){
+	static function Login($dados){
 		$usuario 	= $dados['user'];
-		$senha	= md5($dados['senha']);//encripta com MD5
+		$senha	= $dados['senha'];//encripta com MD5
 		//verificando se ja existe
-		$existe = mysqli_query($conn,"SELECT * FROM usuarios WHERE login = '$usuario' AND senha = '$senha'");
+        $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        $query = "SELECT * FROM usuarios WHERE login = '$usuario' AND senha = '$senha'";
+		$existe = mysqli_query($conexao,$query);
 		if(mysqli_num_rows($existe) == 1){ // retornou 1 então existe
 			//capturando os dados da consulta
 			$cliente = mysqli_fetch_object($existe);
@@ -23,7 +25,7 @@ class Usuario{
 			header('location:logado/'); //redireciona
 			exit();//encerra a leitura do codigo
 		} else {
-            echo mysqli_query("SELECT * FROM usuarios WHERE login = '$usuario' AND senha = '$senha'");
+            echo $query;
 			echo 'A combinação de usuario e senha não existe';
 		}
 	}

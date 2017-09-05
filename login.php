@@ -1,5 +1,6 @@
 <?php include('config.php'); ?>
 <?php include('inc/functions.php'); ?>
+<?php include('inc/database.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -39,9 +40,8 @@
                     <button type="submit" class="btn btn-primary form-control" name="logar"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>  Login</button>
                                         
                      <?php
-                        if($_POST){
-                            echo Usuario::Login($_POST);
-                            
+                        if($_POST){                            
+                            echo Usuario::Login($_POST);                            
                         }
                     ?>
                 </form>                
