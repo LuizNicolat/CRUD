@@ -52,7 +52,14 @@
                             <td><?php echo $res['id']; ?> </td>                            
                             <td><?php echo $res['login']; ?> </td> 
                             <td><?php echo $res['senha']; ?> </td>
-                            <td>as</td>
+                            <td>                                
+                                <button type="button" class="btn btn-default btn-lg btn-xs">
+                                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-lg btn-xs" name="deleta">
+                                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                            </td>
                         </tr>
                     <?php }
                     } else {
@@ -68,4 +75,19 @@
 	</form>
     
 </div>
-<?php include('../inc/footer.php'); ?>
+
+</main> <!-- /container -->
+
+	<hr>
+	<footer class="container">
+		<p>&copy;2017 - CodeWorks</p>
+	</footer>
+<!--    <script>window.jQuery || document.write('<script src="<?php echo BASEURL; ?>js/jquery-1.11.2.min.js"><\/script>')</script>-->
+
+    <script src="<?php echo BASEURL; ?>js/jquery-3.2.1.min.js"></script> 
+    <script src="<?php echo BASEURL; ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo BASEURL; ?>users/js/scriptsUser.js"></script>
+
+<!--    <script src="<?php echo BASEURL; ?>js/main.js"></script>-->
+</body>
+</html>
