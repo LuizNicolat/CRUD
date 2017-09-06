@@ -37,7 +37,7 @@
             <tr>
                 <th>Código</th>
                 <th>Usuário</th>
-                <th>Senha</th>
+                <th>Senha (MD5)</th>
                 <th>Opções</th>                
             </tr>
         </thead>

@@ -5,7 +5,7 @@
 - https://www.phpmyadmin.net
 -
 - Host: localhost
-- Generation Time: 05-Set-2017 às 03:08
+- Generation Time: 06-Set-2017 às 02:18
 - Versão do servidor: 5.7.17
 - PHP Version: 5.6.30
 -->
@@ -22,7 +22,7 @@
                   `login` varchar(255) NOT NULL,
                   `senha` varchar(255) NOT NULL,
                   PRIMARY KEY (`id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -36,6 +36,21 @@
             <column name="id">1</column>
             <column name="login">admin</column>
             <column name="senha">21232f297a57a5a743894a0e4a801fc3A</column>
+        </table>
+        <table name="usuarios">
+            <column name="id">5</column>
+            <column name="login">admin1</column>
+            <column name="senha">81dc9bdb52d04dc20036dbd8313ed055</column>
+        </table>
+        <table name="usuarios">
+            <column name="id">6</column>
+            <column name="login">admin2</column>
+            <column name="senha">21232f297a57a5a743894a0e4a801fc3</column>
+        </table>
+        <table name="usuarios">
+            <column name="id">7</column>
+            <column name="login">marcelo</column>
+            <column name="senha">827ccb0eea8a706c4c34a16891f84e7b</column>
         </table>
     </database>
 </pma_xml_export>
