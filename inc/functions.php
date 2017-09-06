@@ -5,6 +5,7 @@ class Usuario{
 	var $usuario= "";
 	var $senha	= "";
 
+    
 //	function primeiroNome($nome){
 //		$nome_mostra = explode(" ",$nome);
 //		return $nome_mostra[0]; //primeiro nome
@@ -30,12 +31,12 @@ class Usuario{
 	}
 
 
-	function cadastraUsuario($user, $senha){
-        $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	function cadastraUsuario($user, $senha){        
         
 		$usuario 	= $user;
 		$senha	= md5($senha);//encripta com MD5
 		//verificando se ja existe
+        $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         $queryexiste = "SELECT id FROM usuarios WHERE login = '$usuario'";
 		$existe = mysqli_query($conexao, $queryexiste);
 
@@ -74,6 +75,16 @@ class Usuario{
 		} else {
 			return 0;
 		}
+	}
+    
+    static function listaUsuario(){
+		//se veio ID, então consulta especifico:*= tudo
+		//ou pede os campos que deseja: id, nome, email WHERE = aonde
+		//igual: =, diferente: <>, <=, >=
+        $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        $queryexiste = "SELECT id,login,senha FROM usuarios ORDER BY login ASC";
+		$result = mysqli_query($conexao, $queryexiste);
+		return $result;
 	}
 
 } //final da classe
