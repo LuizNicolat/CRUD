@@ -4,7 +4,7 @@
 
 <?php include('../inc/header.php'); ?>
 
-<div class="wrap" style="padding-top:20px">	  
+<div class="wrap" style="padding-top:20px" id="wrap">	  
     <?php
             if (isset($_POST['submit'])) {
 
@@ -12,10 +12,7 @@
                 $senha  = $_POST['senha'];
 
                 $cadastra = new Usuario();
-                echo $cadastra->cadastraUsuario($user,$senha);
-                
-                close_database();
-                open_database();
+                echo $cadastra->cadastraUsuario($user,$senha);                
                 
                 }
              ?>
@@ -31,7 +28,7 @@
 		</div>
 		<div class="input-group col-md-4" style="padding-top:5px">
         <input type="submit" name="submit" value="Cadastrar" class="btn btn-success">
-        <div class="row container" style="padding-top:20px">
+        <div class="row container" style="padding-top:20px" id="tabela">
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>

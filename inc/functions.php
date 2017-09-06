@@ -61,7 +61,7 @@ class Usuario{
 		if($id != ""){
 			$result = mysqli_query("SELECT * FROM usuarios WHERE id = '$id'");
 		} else { //consulta geral 
-			$result = mysqli_query("SELECT id,nome,email FROM usuarios ORDER BY nome ASC"); //ASC ou DESC
+			$result = mysqli_query("SELECT id,nome,email FROM usuarios ORDER BY id ASC"); //ASC ou DESC
 		}
 		//saida nos dados para fora da function:
 		return $result;
@@ -82,7 +82,7 @@ class Usuario{
 		//ou pede os campos que deseja: id, nome, email WHERE = aonde
 		//igual: =, diferente: <>, <=, >=
         $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-        $queryexiste = "SELECT id,login,senha FROM usuarios ORDER BY login ASC";
+        $queryexiste = "SELECT id,login,senha FROM usuarios ORDER BY id ASC";
 		$result = mysqli_query($conexao, $queryexiste);
 		return $result;
 	}
