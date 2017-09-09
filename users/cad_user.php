@@ -29,7 +29,7 @@
 		<div class="input-group col-md-4" style="padding-top:5px">
         <input type="submit" name="submit" value="Cadastrar" class="btn btn-success">
         <div class="row container" style="padding-top:20px" id="tabela">
-            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <table id="tabelapadrao" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Código</th>
@@ -45,19 +45,21 @@
                 $listagem = Usuario::listaUsuario();
                 if(mysqli_num_rows($listagem)>0){
                     while(  $res = mysqli_fetch_assoc($listagem)   ){ ?>
-                        <tr>
-                            <td><?php echo $res['id']; ?> </td>                            
-                            <td><?php echo $res['login']; ?> </td> 
-                            <td><?php echo $res['senha']; ?> </td>
-                            <td>                                
-                                <button type="button" class="btn btn-default btn-lg btn-xs">
-                                  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-lg btn-xs" name="deleta">
-                                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                        </tr>
+                        <div id="<?php echo $res['id']; ?>">
+                            <tr codigo="<?php echo $res['login']; ?>">
+                                <td><?php echo $res['id']; ?> </td>                    
+                                <td><?php echo $res['login']; ?> </td> 
+                                <td><?php echo $res['senha']; ?> </td>
+                                <td>                                
+                                    <button type="button" class="btn btn-default btn-lg btn-xs">
+                                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-lg btn-xs" name="deleta">
+                                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </div>
                     <?php }
                     } else {
                     echo 'Não existem usuários cadastrados...';
