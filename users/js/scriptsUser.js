@@ -10,36 +10,41 @@
            var checkstr =  confirm('Confirma a exclusão do '+id+' ?');
         if(checkstr == true){
 //          alert(id);
+            
+            $.ajax({
+              type:'POST',
+              url:'../users/inc/deletauser.php',
+              data:'codigo='+id,
+              success:function(data) {
+                if(data) { 
+                    alert("DEU!");// DO SOMETHING
+                } else { // DO SOMETHING }
+                    alert("NUM DEU!");
+              }
+              }
+            })
+        }   
+//        function RefreshTable() {
+//           $("#tabela").load(location.href+" #tabela>*","");
+//       }
 
-
-
-        function RefreshTable() {
-           $("#tabela").load(location.href+" #tabela>*","");
-       }
-
-        }else{
+        else{
         return false;
         }
 
 
         })//final do click do excluir
 
-        jQuery('input[name="submit"]').click(function(){
-
-           var checkstr =  confirm('Confirma a exclusão?');
-        if(checkstr == true){
-          alert('Chupa!');
-
-    //    function RefreshTable() {
-    //       $("#tabela").load(location.href+" #tabela>*","");
-    //   }
-
-        }else{
-        return false;
-        }
-
-
-
-    })
+//        jQuery('input[name="submit"]').click(function(){
+//
+//        
+//
+//        }else{
+//        return false;
+//        }
+//
+//
+//
+//    )
 
 })
