@@ -1,37 +1,9 @@
 <?php include('../config.php'); ?>
 <?php include('../inc/functions.php'); ?>
 <?php include('../inc/database.php'); ?>
+<?php include('../inc/header.php'); ?>        
 
-<?php include('../inc/header.php'); ?>
 
-<div class="wrap" style="padding-top:20px" id="wrap">	  
-    <?php
-            if (isset($_POST['submit'])) {
-
-                $user   = $_POST['user'];
-                $senha  = $_POST['senha'];
-
-                $cadastra = new Usuario();
-                echo $cadastra->cadastraUsuario($user,$senha);                
-                
-                }
-             ?>
-  
-    <form action="cad_user.php" method="post">
-        <div class="col-xs-12 divmsg" style="display:none">
-			<input type="text" name="msg2" />
-		</div>
-		<div class="input-group col-md-4">
-		  <label for="usr">Usuário:</label>
-		  <input type="text" class="form-control" id="user" name="user" required>			
-		</div>
-		<div class="input-group col-md-4">
-		  <label for="senha">Senha:</label>
-		  <input type="text" class="form-control" id="senha" name="senha" required>			
-		</div>
-		<div class="input-group col-md-4" style="padding-top:5px">
-        <input type="submit" name="submit" value="Cadastrar" class="btn btn-success">
-        <div class="row container" style="padding-top:20px" id="tabela">
             <table id="tabelapadrao" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -71,25 +43,5 @@
             
         </tbody>
     </table>    
-        </div>                                                
-                    
-		</div>
-	</form>
-    
-</div>
-
-</main> <!-- /container -->
-
-	<hr>
-	<footer class="container">
-		<p>&copy;2017 - CodeWorks</p>
-	</footer>
-<!--    <script>window.jQuery || document.write('<script src="<?php echo BASEURL; ?>js/jquery-1.11.2.min.js"><\/script>')</script>-->
-
-    <script src="<?php echo BASEURL; ?>js/jquery-3.2.1.min.js"></script> 
-    <script src="<?php echo BASEURL; ?>js/bootstrap.min.js"></script>
-    <script src="<?php echo BASEURL; ?>users/js/scriptsUser.js"></script>
-
-<!--    <script src="<?php echo BASEURL; ?>js/main.js"></script>-->
-</body>
-</html>
+                                                
+               

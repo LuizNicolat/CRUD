@@ -1,14 +1,16 @@
+<?php include('../../config.php'); ?>
+
 <?php
     class usersUsuario {
 
-        function deletar($id){
+        function deletar($login){
             
             $conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-            $queryexiste = "delete FROM usuarios WHERE login = '$id'";
+            $querydeleta = "delete FROM usuarios WHERE login = '$login'";
             
-            $ok = mysqli_query($conexao, $queryexiste); //true ou false
+            $ok = mysqli_query($conexao, $querydeleta); //true ou false
             if($ok){
-                return 1;
+                return $querydeleta;
             } else {
                 return 0;
             }

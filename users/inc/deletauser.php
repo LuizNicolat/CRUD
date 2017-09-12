@@ -1,9 +1,10 @@
 <?php
 include('functions.php');
 
-$id = $_POST['id'];
+$login = isset($_POST['login']);
 
-user = new usersUsuario();
-echo user->deletar($id);
+$user = new usersUsuario();
+//echo $user->deletar($login);
+echo $login;
 
 ?>
