@@ -47,9 +47,9 @@ class Usuario{
 			$query = "INSERT INTO usuarios (login, senha) values ('$usuario','$senha')";            
 			$ok = mysqli_query($conexao,$query);
             if($ok){
-				echo "Cadastrado com sucesso!";
+				return 1;
 			} else {
-				echo "Erro ao Cadastrar!";
+				return 0;
 			}
 		}
 	}

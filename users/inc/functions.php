@@ -10,7 +10,7 @@
             
             $ok = mysqli_query($conexao, $querydeleta); //true ou false
             if($ok){
-                return $querydeleta;
+                return 1;
             } else {
                 return 0;
             }

@@ -17,23 +17,22 @@
                 cache:false,
                 datatype:'text',
               success:function(data) {
-                  alert(data.toString());
                   
-//                if (data == 1) {
-//					jQuery('.divmsg').html('Tudo salvo corretamente.').addClass('alert alert-success').slideDown(350);
-//                    jQuery("#tabela").load('lista_user.php'); 
-//				} else 
-//				{ 
-//					jQuery('.divmsg').html('Ocorreu um erro' + data).addClass('alert alert-warning').slideDown(350);
-//                    
-//				}
-//                                       
-//                setTimeout(
-//						function(){
-//							jQuery('.divmsg').slideUp(350);
-//						},
-//						5000
-//					)
+                if (data == 1) {
+					jQuery('.divmsg').html('Tudo salvo corretamente.').addClass('alert alert-success').slideDown(350);
+                    jQuery("#tabela").load('lista_user.php'); 
+				} else 
+				{ 
+					jQuery('.divmsg').html('Ocorreu um erro' + data).addClass('alert alert-warning').slideDown(350);
+                    
+				}
+                                       
+                setTimeout(
+						function(){
+							jQuery('.divmsg').slideUp(350);
+						},
+						5000
+					)
               }
             })
         }   
@@ -46,13 +45,18 @@
 
         })//final do click do excluir
 
-//        jQuery('input[name="submit"]').click(function(){
-//
+        jQuery('input[name="submit"]').click(function(){
+//            jQuery('.divmsg').html('Cadastrado com sucesso.').addClass('alert alert-success').slideDown(350);
 //        
-//
-//        else{
-//        return false;
-//        })
+//            setTimeout(
+//						function(){
+//							jQuery('.divmsg').slideUp(350);
+//						},
+//						5000
+//					)
+//        
+            alert('a');
+        })
             
 
 })

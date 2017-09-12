@@ -12,7 +12,7 @@
                 $senha  = $_POST['senha'];
 
                 $cadastra = new Usuario();
-                echo $cadastra->cadastraUsuario($user,$senha);                
+                $cadastra->cadastraUsuario($user,$senha);                
                 
                 }
              ?>
