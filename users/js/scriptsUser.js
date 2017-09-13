@@ -46,17 +46,46 @@
         })//final do click do excluir
 
         jQuery('input[name="submit"]').click(function(){
-//            jQuery('.divmsg').html('Cadastrado com sucesso.').addClass('alert alert-success').slideDown(350);
-//        
-//            setTimeout(
-//						function(){
-//							jQuery('.divmsg').slideUp(350);
-//						},
-//						5000
-//					)
-//        
-            alert('a');
-        })
             
+            
+            usuario = jQuery('input[name="user"]').val();
+			senha = jQuery('input[name="senha"]').val();
+            
+            jQuery.ajax({
+              type:'POST',
+              url:'../users/inc/cadastrauser.php',
+              data: "user="+usuario+"&senha="+senha,
+                cache:false,
+                datatype:'text',
+              success:function(data) {
+                  
+                if (data == 1) {
+					jQuery('.divmsg').html('Castrado com sucesso.').addClass('alert alert-success').slideDown(350);
+                    jQuery("#tabela").load('lista_user.php'); 
+				} else 
+				{ 
+					jQuery('.divmsg').html('Ocorreu um erro' + data).addClass('alert alert-warning').slideDown(350);
+                    
+				}
+                                       
+                setTimeout(
+						function(){
+							jQuery('.divmsg').slideUp(350);
+						},
+						5000
+					)
+              }
+            })
+        }   
+      
+
+        else{
+        return false;
+        }
+
+
+        })
+        
+        
 
 })
