@@ -49,22 +49,28 @@
             
             
             usuario = jQuery('input[name="user"]').val();
-			senha = jQuery('input[name="senha"]').val();
+			senha = jQuery('input[name="senha"]').val();            
+            
             
             jQuery.ajax({
               type:'POST',
               url:'../users/inc/cadastrauser.php',
-              data: "user="+usuario+"&senha="+senha,
+              data: 'user='+usuario+'&senha='+senha,
                 cache:false,
                 datatype:'text',
               success:function(data) {
-                  
                 if (data == 1) {
-					jQuery('.divmsg').html('Castrado com sucesso.').addClass('alert alert-success').slideDown(350);
-                    jQuery("#tabela").load('lista_user.php'); 
-				} else 
+                    
+//                   alert(data.toString());
+					jQuery('.divmsg').html(data.toString()).addClass('alert alert-success').slideDown(350);
+//                    jQuery("#tabela").load('lista_user.php'); 
+				} else
+                    if(data == 2){
+                        alert('aaa');
+                       } else if(data == 0)
 				{ 
-					jQuery('.divmsg').html('Ocorreu um erro' + data).addClass('alert alert-warning').slideDown(350);
+//                   alert(data.toString());
+					jQuery('.divmsg').html('Ocorreu um erro' + data.toString()).addClass('alert alert-warning').slideDown(350);
                     
 				}
                                        
@@ -76,15 +82,8 @@
 					)
               }
             })
-        }   
-      
-
-        else{
-        return false;
-        }
-
-
-        })
+        }    
+                )
         
         
 
