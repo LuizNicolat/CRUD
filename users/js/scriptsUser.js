@@ -51,43 +51,43 @@
             usuario = jQuery('input[name="user"]').val();
 			senha = jQuery('input[name="senha"]').val();            
             
-            
-            jQuery.ajax({
-              type:'POST',
-              url:'../users/inc/cadastrauser.php',
-              data: 'user='+usuario+'&senha='+senha,
-                cache:false,
-                datatype:'text',
-              success:function(data) {
-                  
-                  if(data == 0){
-                    alert(data.toString());
-                  }
-                  
-                  
-//                if (data == 1) {
-//                    
-//                  alert(data.toString());
-//					jQuery('.divmsg').html(data.toString()).addClass('alert alert-success').slideDown(350);
-//                    jQuery("#tabela").load('lista_user.php'); 
-//				} else
-//                    if(data == 2){
-//                        alert('aaa');
-//                       } else if(data == 0)
-//				{ 
-//                   alert(data.toString());
-//					jQuery('.divmsg').html('Ocorreu um erro' + data.toString()).addClass('alert alert-warning').slideDown(350);
-//                    
-//				}
-//                                       
-//                setTimeout(
-//						function(){
-//							jQuery('.divmsg').slideUp(350);
-//						},
-//						5000
-//					)
-              }
-            })
+             jQuery('.divmsg').html(usuario +' / ' + senha).addClass('alert alert-success').slideDown(350);
+//            jQuery.ajax({
+//              type:'POST',
+//              url:'../users/inc/cadastrauser.php',
+//              data: 'user='+usuario+'&senha='+senha,
+//                cache:false,
+//                datatype:'text',
+//              success:function(data) {
+//                  
+//                  if(data == 0){
+//                    alert(data.toString());
+//                  }
+//                  
+//                  
+////                if (data == 1) {
+////                    
+////                  alert(data.toString());
+////					jQuery('.divmsg').html(data.toString()).addClass('alert alert-success').slideDown(350);
+////                    jQuery("#tabela").load('lista_user.php'); 
+////				} else
+////                    if(data == 2){
+////                        alert('aaa');
+////                       } else if(data == 0)
+////				{ 
+////                   alert(data.toString());
+////					jQuery('.divmsg').html('Ocorreu um erro' + data.toString()).addClass('alert alert-warning').slideDown(350);
+////                    
+////				}
+////                                       
+////                setTimeout(
+////						function(){
+////							jQuery('.divmsg').slideUp(350);
+////						},
+////						5000
+////					)
+//              }
+//            })
         }    
                 )
         

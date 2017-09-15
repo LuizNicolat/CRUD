@@ -14,7 +14,7 @@
             padding-bottom: 20px;
         }
     </style>
-<!--    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">-->
+    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.css">
 </head>
 <body>

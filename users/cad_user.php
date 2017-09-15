@@ -3,7 +3,7 @@
 <?php include('../inc/database.php'); ?>
 
 <?php include('../inc/header.php'); ?>
-<div class="col-xs-12 divmsg" style="display:none">
+<div class="col-xs-12 divmsg">
     <input type="text" name="msg2" />
 </div>
 <div class="wrap" style="padding-top:20px" id="wrap">	  
@@ -29,7 +29,7 @@
 		  <input type="text" class="form-control" id="senha" name="senha" required>			
 		</div>
 		<div class="input-group col-md-4" style="padding-top:5px">
-        <input type="submit" name="submit" value="Cadastrar" class="btn btn-success">
+        <input type="button" name="submit" value="Cadastrar" class="btn btn-success">
         <div class="row container" style="padding-top:20px" id="tabela">
             <table id="tabelapadrao" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
