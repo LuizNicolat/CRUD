@@ -51,43 +51,40 @@
             usuario = jQuery('input[name="user"]').val();
 			senha = jQuery('input[name="senha"]').val();            
             
-             jQuery('.divmsg').html(usuario +' / ' + senha).addClass('alert alert-success').slideDown(350);
-//            jQuery.ajax({
-//              type:'POST',
-//              url:'../users/inc/cadastrauser.php',
-//              data: 'user='+usuario+'&senha='+senha,
-//                cache:false,
-//                datatype:'text',
-//              success:function(data) {
-//                  
-//                  if(data == 0){
-//                    alert(data.toString());
-//                  }
-//                  
-//                  
-////                if (data == 1) {
-////                    
-////                  alert(data.toString());
-////					jQuery('.divmsg').html(data.toString()).addClass('alert alert-success').slideDown(350);
-////                    jQuery("#tabela").load('lista_user.php'); 
-////				} else
-////                    if(data == 2){
-////                        alert('aaa');
-////                       } else if(data == 0)
-////				{ 
-////                   alert(data.toString());
-////					jQuery('.divmsg').html('Ocorreu um erro' + data.toString()).addClass('alert alert-warning').slideDown(350);
-////                    
-////				}
-////                                       
-////                setTimeout(
-////						function(){
-////							jQuery('.divmsg').slideUp(350);
-////						},
-////						5000
-////					)
-//              }
-//            })
+//             jQuery('.divmsg').html(usuario +' / ' + senha).addClass('alert alert-success').slideDown(350);
+            jQuery.ajax({
+              type:'POST',
+              url:'../users/inc/cadastrauser.php',
+              data: 'user='+usuario+'&senha='+senha,
+                cache:false,
+                datatype:'text',
+              success:function(data) {
+                  
+//                  jQuery('.divmsg').html(data.toString()).addClass('alert alert-success').slideDown(350);
+                  
+                  if(data == 0){
+                    jQuery('.divmsg').html('Erro ao cadastrar!').addClass('alert alert-danger').slideDown(350);
+                  }
+                  
+                  
+                if (data == 1) {
+					jQuery('.divmsg').html('Cadastrado com sucesso').addClass('alert alert-success').slideDown(350);
+                    $('input[name="user"]').val('');
+                    $('input[name="user"]').val('');
+                    jQuery("#tabela").load('lista_user.php'); 
+				} else
+                    if(data == 2){
+                        jQuery('.divmsg').html('Usuário já cadastrado!').addClass('alert alert-warning').slideDown(350);
+                       }
+                                       
+                setTimeout(
+						function(){
+							jQuery('.divmsg').slideUp(350);                            
+						},
+						5000
+					)
+              }
+            })
         }    
                 )
         

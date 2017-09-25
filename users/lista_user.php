@@ -41,6 +41,9 @@
                 } 
                 ?>               
             
+            <script src="<?php echo BASEURL; ?>js/jquery-3.2.1.min.js"></script> 
+            <script src="<?php echo BASEURL; ?>js/bootstrap.min.js"></script>
+            <script src="<?php echo BASEURL; ?>users/js/scriptsUser.js"></script>
         </tbody>
     </table>    
                                                 
