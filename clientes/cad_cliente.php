@@ -21,16 +21,16 @@
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="radiofisico">Tipo</label>
             <div class="radio col-xs-12">
-              <label><input checked type="radio" name="radiofisico">Físico</label>
-            <label><input type="radio" name="radiojuridico">Juridico</label>
+              <label><input type="radio" name="radio" id="fisico">Físico</label>
+            <label><input type="radio" name="radio" id="juridico">Juridico</label>
             </div>
         </div>
         <div class="col-xs-12 col-sm-4 form-group">
-            <label for="cpf">CPF</label>
+            <label for="cpf" id="cpf">CPF</label>
             <input type="text" name="cpf" class="form-control" />
         </div>
         <div class="col-xs-12 col-sm-4 form-group">
-            <label for="rg">RG</label>
+            <label for="rg" id="rg">RG</label>
             <input type="text" name="rg" class="form-control" />
         </div>
         <div class="col-xs-12 col-sm-4 form-group">
@@ -40,7 +40,7 @@
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="cep">CEP</label>
             <div class="input-group">                
-                <input type="text" id="cep" class="form-control" name="cep" placeholder="Search for...">
+                <input type="text" id="cep" class="form-control" name="cep" placeholder="Clique para pesquisar ->">
                 <span class="input-group-btn">
                     <button class="btn btn-secondary" type="button" name="buscacep"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
                   </span>
@@ -65,6 +65,21 @@
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="IBGE">IBGE</label>
             <input type="text" id="ibge" name="IBGE" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="numero">Número</label>
+            <input type="text" id="ibge" name="numero" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="fone1">Fone 1</label>
+            <input type="text" id="ibge" name="fon1" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="fone2">Fone 2</label>
+            <input type="text" id="ibge" name="fone2" class="form-control" />
+        </div><div class="col-xs-12 col-sm-4 form-group">
+            <input type="button" name="submit" value="Cadastrar" class="btn btn-success">
+            <input type="button" name="submit" value="Listar Clientes" class="btn btn-default">
         </div>
 	</form>
     

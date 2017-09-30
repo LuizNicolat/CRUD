@@ -1,5 +1,4 @@
-    jQuery(document).ready(function(){       
-        
+    jQuery(document).ready(function(){ 
         //capturando o clique no botao
         jQuery('button[name="deleta"]').click(function(){
             

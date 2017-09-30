@@ -65,4 +65,17 @@ $(document).ready(function() {
 
             
         })//final do click do cep
+    
+       
+    jQuery('#juridico').click(function(){
+        $("#cpf").html("CNPJ");
+        $("#rg").html("I.E.");
+//    $("#LabelID").html("some value");
+    })
+    
+    jQuery('#fisico').click(function(){
+        $("#cpf").html("CPF");
+        $("#rg").html("RG");
+//    $("#LabelID").html("some value");
+    })
 })

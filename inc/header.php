@@ -41,7 +41,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>customers">Gerenciar Clientes</a></li>
-                    <li><a href="<?php echo BASEURL; ?>customers/add.php">Novo Cliente</a></li>
+                    <li><a href="<?php echo BASEURL; ?>clientes/cad_cliente.php">Novo Cliente</a></li>
                 </ul>
             </li>
           </ul>
